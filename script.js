@@ -4,7 +4,7 @@ const btnTheme = document.getElementById("btn-theme");
 const themeIcon = document.getElementById("theme-icon");
 
 // Cargar tema guardado
-const storedTheme = localStorage.getItem("pulonio-theme");
+const storedTheme = localStorage.getItem("plutonio-theme");
 if (storedTheme === "dark") {
   body.classList.add("dark");
   if (themeIcon) themeIcon.textContent = "light_mode";
@@ -15,7 +15,7 @@ if (btnTheme) {
   btnTheme.addEventListener("click", () => {
     body.classList.toggle("dark");
     const isDark = body.classList.contains("dark");
-    localStorage.setItem("pulonio-theme", isDark ? "dark" : "light");
+    localStorage.setItem("plutonio-theme", isDark ? "dark" : "light");
     if (themeIcon) {
       themeIcon.textContent = isDark ? "light_mode" : "dark_mode";
     }
@@ -53,24 +53,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Acordeón FAQ
-const faqItems = document.querySelectorAll(".faq__item");
-
-faqItems.forEach((item) => {
-  const question = item.querySelector(".faq__question");
-  question.addEventListener("click", () => {
-    // Cerrar otros
-    faqItems.forEach((itm) => {
-      if (itm !== item) {
-        itm.classList.remove("faq__item--open");
-      }
-    });
-    // Toggle actual
-    item.classList.toggle("faq__item--open");
-  });
-});
-
-// Formulario simulado
+// Formulario -> generar mensaje para WhatsApp
 const form = document.getElementById("form-contacto");
 
 if (form) {
@@ -79,16 +62,29 @@ if (form) {
 
     const nombre = form.nombre.value.trim();
     const email = form.email.value.trim();
+    const mensajeExtra = form.mensaje.value.trim();
 
     if (!nombre || !email) {
       alert("Por favor, completa tu nombre y correo.");
       return;
     }
 
-    alert(
-      `¡Gracias, ${nombre}! Tu suscripción (simulada) a Pulonio ha sido registrada.`
-    );
+    let mensaje = `Hola, soy ${nombre} y estoy viendo la página de PLUTONIO.\n`;
+    mensaje += `Mi correo es: ${email}.\n`;
+    mensaje += `Me gustaría recibir más información sobre la bebida para fiebre y tos.`;
 
+    if (mensajeExtra) {
+      mensaje += `\n\nMensaje adicional:\n${mensajeExtra}`;
+    }
+
+    const encoded = encodeURIComponent(mensaje);
+
+    // Número en formato internacional para Perú: +51 949 287 245
+    const whatsappUrl = `https://wa.me/51949287245?text=${encoded}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    alert("Se ha generado tu mensaje para WhatsApp. Se abrirá una nueva pestaña.");
     form.reset();
   });
 }
