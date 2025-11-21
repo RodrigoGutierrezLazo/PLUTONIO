@@ -21,59 +21,66 @@
 </head>
 <body>
   <!-- HEADER / HERO -->
-  <header class="hero">
-    <nav class="nav">
-      <div class="nav__logo">
-        <span class="logo__badge">Pulonio</span>
-        <span class="logo__subtitle">Kion + Miel + Limón</span>
+<header class="hero">
+  <nav class="nav">
+    <div class="nav__logo">
+      <span class="logo__badge">PLUONIO</span>
+      <span class="logo__subtitle">KION + MIEL + LIMÓN</span>
+    </div>
+
+    <button id="btn-menu" class="nav__menu-btn" aria-label="Abrir menú">
+      <span class="material-icons">menu</span>
+    </button>
+
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#beneficios" class="nav__link">BENEFICIOS</a></li>
+      <li><a href="#ingredientes" class="nav__link">INGREDIENTES</a></li>
+      <li><a href="#modo-uso" class="nav__link">MODO DE USO</a></li>
+      <li><a href="#faq" class="nav__link">FAQ</a></li>
+      <li><a href="#contacto" class="nav__link">CONTACTO</a></li>
+    </ul>
+
+    <button id="btn-theme" class="nav__theme-btn" aria-label="Cambiar tema">
+      <span class="material-icons" id="theme-icon">dark_mode</span>
+    </button>
+  </nav>
+
+  <div class="hero__content">
+    <div class="hero__text">
+      <h1 class="hero__title">
+        ALIVIO <span>NATURAL</span><br />
+        ENERGÍA SUAVE
+      </h1>
+
+      <p class="hero__subtitle">
+        Pulonio es una bebida a base de kion (jengibre), miel y limón, pensada
+        para acompañarte cuando sientes tos o malestar por la fiebre. No
+        reemplaza a un tratamiento médico, pero puede ser tu aliado natural.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#beneficios" class="btn btn--primary">VER BENEFICIOS</a>
+        <a href="#ingredientes" class="btn btn--ghost">VER FÓRMULA</a>
       </div>
 
-      <button id="btn-menu" class="nav__menu-btn" aria-label="Abrir menú">
-        <span class="material-icons">menu</span>
-      </button>
+      <p class="hero__note">
+        ⚠️ Importante: Pulonio es un producto ficticio y no sustituye la consulta médica.
+      </p>
+    </div>
 
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#beneficios" class="nav__link">Beneficios</a></li>
-        <li><a href="#ingredientes" class="nav__link">Ingredientes</a></li>
-        <li><a href="#modo-uso" class="nav__link">Modo de uso</a></li>
-        <li><a href="#faq" class="nav__link">FAQ</a></li>
-        <li><a href="#contacto" class="nav__link">Contacto</a></li>
-      </ul>
+    <!-- FOTO DE LA LATA -->
+<div class="hero__image">
+    <img 
+        src="lata.png"
+        alt="Lata Pulonio"
+        class="lata-pulonio"
+    />
+</div>
 
-      <button id="btn-theme" class="nav__theme-btn" aria-label="Cambiar tema">
-        <span class="material-icons" id="theme-icon">dark_mode</span>
-      </button>
-    </nav>
+  </div>
+</header>
 
-    <div class="hero__content">
-      <div class="hero__text">
-        <h1 class="hero__title">
-          Alivio <span>natural</span><br />
-          energía suave
-        </h1>
-        <p class="hero__subtitle">
-          <strong>Pulonio</strong> es una bebida a base de kion (jengibre), miel y limón,
-          pensada para acompañarte cuando sientes tos o malestar por la fiebre.
-          No reemplaza a un tratamiento médico, pero puede ser tu aliado natural.
-        </p>
-        <div class="hero__actions">
-          <a href="#beneficios" class="btn btn--primary">Ver beneficios</a>
-          <a href="#ingredientes" class="btn btn--ghost">Ver fórmula</a>
-        </div>
-        <p class="hero__note">
-          ⚠️ Importante: Pulonio es un producto ficticio y no sustituye la consulta médica.
-        </p>
-      </div>
 
-      <div class="hero__image">
-        <div class="can__wrapper">
-          <div class="can">
-            <span class="can__logo">Pulonio</span>
-            <span class="can__tagline">Kion Power</span>
-            <span class="can__detail">Tos & Fiebre</span>
-          </div>
-          <div class="can__glow"></div>
-        </div>
       </div>
     </div>
   </header>
